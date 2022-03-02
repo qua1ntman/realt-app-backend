@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FeedModule } from './feed/feed.module';
 import { AuthModule } from './auth/auth.module';
+import { AdsModule } from './ads/ads.module';
 
 
 @Module({
@@ -21,7 +22,8 @@ import { AuthModule } from './auth/auth.module';
       synchronize: true,
     }),
     FeedModule,
-    AuthModule
+    AuthModule,
+    AdsModule
   ],
   controllers: [AppController],
   providers: [AppService],

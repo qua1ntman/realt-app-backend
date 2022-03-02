@@ -26,20 +26,20 @@ export class FeedController {
     return this.feedService.createPost(req.user, feedPost);
   }
 
-  //   @Get()
-  //   findAll(): Observable<FeedPost[]> {
-  //     return this.feedService.findAllPosts();
-  //   }
+  @Get()
+  findAll(): Observable<FeedPost[]> {
+    return this.feedService.findAllPosts();
+  }
 
-  //   @Get(':id')
-  //   find(@Param('id') id: number): Observable<FeedPost> {
-  //     return this.feedService.findPost(id);
-  //   }
+  @Get(':id')
+  find(@Param('id') id: number): Observable<FeedPost> {
+    return this.feedService.findPost(id);
+  }
 
   @Get()
   findSelected(
-    @Query('take') take: number = 1,
-    @Query('skip') skip: number = 1,
+    @Query('take') take = 1,
+    @Query('skip') skip = 1,
   ): Observable<FeedPost[]> {
     take = take > 20 ? 20 : take;
     return this.feedService.findPosts(take, skip);
