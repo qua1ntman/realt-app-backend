@@ -17,13 +17,12 @@ export class UserEntity {
   @Column({ unique: true })
   email: string;
 
-  @Column({ select: false})
-  password: string
+  @Column({ select: false })
+  password: string;
 
   @Column({ type: 'enum', enum: Role, default: Role.USER })
   role: Role;
 
   @OneToMany(() => AdEntity, (adEntity) => adEntity.author)
   ad: AdEntity[];
-
 }

@@ -6,7 +6,10 @@ export class AdEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ default: '' })
+  @Column({
+    default:
+      'https://media.istockphoto.com/vectors/blueprint-of-building-vector-id510230824?k=20&m=510230824&s=612x612&w=0&h=r7Ja-6GUzK5QVumR79ZhLiXACHRg9oDmbQ_fH5ZGvVk=',
+  })
   pic: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP()' })
