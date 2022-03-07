@@ -9,7 +9,7 @@ export class AdEntity {
   @Column({ default: '' })
   pic: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTUMP' })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP()' })
   date: Date;
 
   @Column({ default: '' })

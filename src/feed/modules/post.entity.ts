@@ -17,7 +17,7 @@ export class FeedPostEntity {
 
   @CreateDateColumn()
   createdAt: Date;
-  @ManyToOne(() => UserEntity, (userEntity) => userEntity.feedPost)
 
+  @ManyToOne(() => UserEntity, (userEntity) => userEntity.ad)
   author: UserEntity;
 }

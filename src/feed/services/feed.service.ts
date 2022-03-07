@@ -13,7 +13,6 @@ export class FeedService {
     private readonly feedPostRepository: Repository<FeedPostEntity>,
   ) {}
 
-
   createPost(user: User, feedPost: FeedPost): Observable<FeedPost> {
     feedPost.author = user;
     return from(this.feedPostRepository.save(feedPost));
@@ -27,7 +26,7 @@ export class FeedService {
     return from(this.feedPostRepository.findOne(id));
   }
 
-  findPosts(take: number = 10, skip: number = 0): Observable<FeedPost[]> {
+  findPosts(take = 10, skip = 0): Observable<FeedPost[]> {
     return from(
       this.feedPostRepository.findAndCount({ take, skip }).then(([posts]) => {
         return <FeedPost[]>posts;

@@ -3,9 +3,10 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { FeedModule } from './feed/feed.module';
+// import { FeedModule } from './feed/feed.module';
 import { AuthModule } from './auth/auth.module';
 import { AdsModule } from './ads/ads.module';
+// import { MessagesModule } from './messages/messages.module';
 
 
 @Module({
@@ -21,9 +22,10 @@ import { AdsModule } from './ads/ads.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    FeedModule,
+    // FeedModule,
     AuthModule,
-    AdsModule
+    AdsModule,
+    // MessagesModule
   ],
   controllers: [AppController],
   providers: [AppService],
